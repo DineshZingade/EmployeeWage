@@ -1,7 +1,8 @@
 package com.bridgelabz;
 
-public class EmployeeWage {
+import java.util.ArrayList;
 
+public class EmployeeWage {
 	static final int IS_PART_TIME = 1;
 	static final int IS_FULL_TIME = 2;
 	int wagePerHour;
@@ -10,6 +11,8 @@ public class EmployeeWage {
 	int workingDayPerMonth;
 	int totalWorkingHours;
 	int workingHoursPerMonth;
+	ArrayList<Integer> dailyaWage = new ArrayList<>();
+	int totalWage = 0;
 
 	public EmployeeWage(int wagePerHour, int fullDayHour, int partTimeHour, int workingDayPerMonth,
 			int workingHoursPerMonth) {
@@ -23,7 +26,6 @@ public class EmployeeWage {
 
 	public void calculateWage() {
 		int workingDays = 0;
-		int totalWage = 0;
 		while (workingDays < workingDayPerMonth && totalWorkingHours < workingHoursPerMonth) {
 			int empPresent = (int) (Math.floor(Math.random() * 10) % 3); // number b/w 0 and 1
 			int empWage = 0;
@@ -52,6 +54,7 @@ public class EmployeeWage {
 			default:
 				empWage = 0;
 			}
+			dailyaWage.add(empWage);
 			totalWage = totalWage + empWage;
 			System.out.println("Total Wage for Day " + (workingDays + 1) + " = " + totalWage);
 			workingDays++;
@@ -65,7 +68,8 @@ public class EmployeeWage {
 	public String toString() {
 		return "EmployeeWage{" + "wagePerHour=" + wagePerHour + ", fullDayHour=" + fullDayHour + ", partTimeHour="
 				+ partTimeHour + ", workingDayPerMonth=" + workingDayPerMonth + ", totalWorkingHours="
-				+ totalWorkingHours + ", workingHoursPerMonth=" + workingHoursPerMonth + '}';
+				+ totalWorkingHours + ", workingHoursPerMonth=" + workingHoursPerMonth + ", dailyaWage=" + dailyaWage
+				+ ", totalWage=" + totalWage + '}';
 	}
 
 	public static void main(String[] args) {
@@ -76,4 +80,5 @@ public class EmployeeWage {
 		}
 
 	}
+
 }
