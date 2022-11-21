@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 public class EmployeeWage {
+
 	static final int IS_PART_TIME = 1;
 	static final int IS_FULL_TIME = 2;
 	int wagePerHour;
@@ -68,11 +69,11 @@ public class EmployeeWage {
 	}
 
 	public static void main(String[] args) {
-		EmployeeWageBuilder.createEmployeeWage();
-		// System.out.println(EmployeeWageBuilder.arrayList);
-		for (EmployeeWage employeeObject : EmployeeWageBuilder.arrayList) {
+		EmployeeWageBuilderImpl empWage = new EmployeeWageBuilderImpl();
+		empWage.createWageBuilder();
+		for (EmployeeWage employeeObject : EmployeeWageBuilderImpl.arrayList) {
 			System.out.println(employeeObject);
 		}
-	}
 
+	}
 }
