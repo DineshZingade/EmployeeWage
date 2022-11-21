@@ -17,6 +17,7 @@ public class EmployeeWage {
 		while (workingDays < WORKIG_DAY_PER_MONTH && totalWorkingHours < WORKING_HOURS_PER_MONTH) {
 			int empPresent = (int) (Math.floor(Math.random() * 10) % 3); // number b/w 0 and 1
 			int empWage = 0;
+
 			if (empPresent == Is_PART_TIME) {
 				System.out.println("Part time");
 			} else if (empPresent == Is_FULL_TIME) {
@@ -24,6 +25,7 @@ public class EmployeeWage {
 			} else if (empPresent == 0) {
 				System.out.println("Absent");
 			}
+
 			switch (empPresent) {
 			case Is_PART_TIME:
 
@@ -41,7 +43,9 @@ public class EmployeeWage {
 				break;
 			default:
 				empWage = 0;
+
 			}
+
 			totalWage = totalWage + empWage;
 			System.out.println("Total Wage for Day " + (workingDays + 1) + " = " + totalWage);
 			workingDays++;
@@ -49,6 +53,7 @@ public class EmployeeWage {
 		System.out.println("Total Working Days :" + workingDays);
 		System.out.println("Total Working Hours :" + totalWorkingHours);
 		System.out.println("Employee Wage :" + totalWage);
+
 	}
 
 }
