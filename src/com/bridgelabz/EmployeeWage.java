@@ -60,12 +60,19 @@ public class EmployeeWage {
 		System.out.println("Employee Wage :" + totalWage);
 	}
 
-	public static void main(String[] args) {
-		EmployeeWage emp = new EmployeeWage(20, 10, 5, 22, 90);
-		emp.calculateWage();
-		EmployeeWage emp1 = new EmployeeWage(22, 9, 4, 20, 88);
-		emp1.calculateWage();
+	@Override
+	public String toString() {
+		return "EmployeeWage{" + "wagePerHour=" + wagePerHour + ", fullDayHour=" + fullDayHour + ", partTimeHour="
+				+ partTimeHour + ", workingDayPerMonth=" + workingDayPerMonth + ", totalWorkingHours="
+				+ totalWorkingHours + ", workingHoursPerMonth=" + workingHoursPerMonth + '}';
+	}
 
+	public static void main(String[] args) {
+		EmployeeWageBuilder.createEmployeeWage();
+		// System.out.println(EmployeeWageBuilder.arrayList);
+		for (EmployeeWage employeeObject : EmployeeWageBuilder.arrayList) {
+			System.out.println(employeeObject);
+		}
 	}
 
 }
