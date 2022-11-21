@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class EmployeeWage {
 	static final int IS_PART_TIME = 1;
 	static final int IS_FULL_TIME = 2;
+	String companyName;
 	int wagePerHour;
 	int fullDayHour;
 	int partTimeHour;
@@ -13,6 +14,15 @@ public class EmployeeWage {
 	int workingHoursPerMonth;
 	ArrayList<Integer> dailyaWage = new ArrayList<>();
 	int totalWage = 0;
+
+	public EmployeeWage(String companyName, int wagePerHour, int workingDayPerMonth, int totalWorkingHours,
+			int workingHoursPerMonth) {
+		this.companyName = companyName;
+		this.wagePerHour = wagePerHour;
+		this.workingDayPerMonth = workingDayPerMonth;
+		this.totalWorkingHours = totalWorkingHours;
+		this.workingHoursPerMonth = workingHoursPerMonth;
+	}
 
 	public EmployeeWage(int wagePerHour, int fullDayHour, int partTimeHour, int workingDayPerMonth,
 			int workingHoursPerMonth) {
@@ -69,7 +79,7 @@ public class EmployeeWage {
 		return "EmployeeWage{" + "wagePerHour=" + wagePerHour + ", fullDayHour=" + fullDayHour + ", partTimeHour="
 				+ partTimeHour + ", workingDayPerMonth=" + workingDayPerMonth + ", totalWorkingHours="
 				+ totalWorkingHours + ", workingHoursPerMonth=" + workingHoursPerMonth + ", dailyaWage=" + dailyaWage
-				+ ", totalWage=" + totalWage + '}';
+				+ '}';
 	}
 
 	public static void main(String[] args) {
@@ -78,7 +88,7 @@ public class EmployeeWage {
 		for (EmployeeWage employeeObject : EmployeeWageBuilderImpl.arrayList) {
 			System.out.println(employeeObject);
 		}
-
+		int totalEmpWage = empWage.getTotalWage("capgemini");
+		System.out.println(totalEmpWage);
 	}
-
 }
