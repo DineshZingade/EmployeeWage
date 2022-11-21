@@ -1,9 +1,6 @@
 package com.bridgelabz;
 
 public class EmployeeWage {
-
-//	UC2:Added Employee Daily Wages
-
 	static final int WAGE_PER_HOUR = 20;
 	static final int FULL_DAY_HOUR = 8;
 
